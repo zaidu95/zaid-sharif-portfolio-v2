@@ -20,12 +20,12 @@ export const EducationSection: React.FC = () => {
         </div>
 
         {/* Education Highlight Card */}
-        <div className="mt-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800/90 p-6 sm:p-8 shadow-xs">
+        <div className="mt-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800/90 p-6 sm:p-8 shadow-xs hover:shadow-md transition-all duration-300 ring-1 ring-slate-900/5 dark:ring-white/5">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Degree & Institution */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800/60 text-xs font-semibold text-indigo-700 dark:text-indigo-300">
-                <GraduationCap className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-800/60 text-xs font-semibold text-indigo-700 dark:text-indigo-300 shadow-2xs">
+                <GraduationCap className="w-3.5 h-3.5" />
                 <span>{educationData.status}</span>
               </div>
 

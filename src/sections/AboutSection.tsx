@@ -104,11 +104,11 @@ export const AboutSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <span className="text-xs text-slate-500 dark:text-slate-400 block font-mono">
+                  <span className="text-xs text-slate-400 dark:text-slate-500 block font-mono">
                     Primary Tools & Languages
                   </span>
                   <p className="font-semibold text-slate-800 dark:text-slate-200 mt-0.5">
-                    Python · JavaScript · TypeScript · React · SQL · Git
+                    Python · JavaScript · TypeScript · HTML · CSS · Supabase · Git · GitHub
                   </p>
                 </div>
               </div>

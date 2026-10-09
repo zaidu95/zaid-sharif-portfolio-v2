@@ -24,6 +24,8 @@ export const personalInfo = {
     'Building practical academic and personal projects',
   ],
   github: 'https://github.com/zaidu95',
+  email: 'ziozaid78@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/zaid-sharif-1800a7324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   // Placeholders strictly labeled as instructed
   emailPlaceholder: 'zaid.sharif.contact@example.com',
   isEmailPlaceholder: true,
@@ -31,6 +33,7 @@ export const personalInfo = {
   isLinkedinPlaceholder: true,
   resumePath: '/resume.pdf',
   profileImage: '/src/assets/images/zaid_sharif_student_photo_1791476414331.jpg',
+  profileImagePath: '/profile.jpg',
 };
 
 export const skillsData: SkillItem[] = [

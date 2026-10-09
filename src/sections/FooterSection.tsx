@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, ArrowUp, GraduationCap } from 'lucide-react';
+import { Github, ArrowUp, GraduationCap, Mail, Linkedin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export const FooterSection: React.FC = () => {
@@ -47,13 +47,34 @@ export const FooterSection: React.FC = () => {
           </div>
 
           {/* Actions & Scroll to top */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              aria-label="Email Contact"
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100/60 hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-800 transition-all duration-200 hover:-translate-y-0.5"
+              title="Email Contact"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100/60 hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-800 transition-all duration-200 hover:-translate-y-0.5"
+              title="LinkedIn Profile"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100/60 hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-800 transition-all duration-200 hover:-translate-y-0.5"
+              title="GitHub Profile"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -62,9 +83,9 @@ export const FooterSection: React.FC = () => {
               onClick={scrollToTop}
               type="button"
               aria-label="Scroll back to top"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-300 bg-slate-100/60 dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 shadow-2xs hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
             >
-              <span>Top</span>
+              <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>

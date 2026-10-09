@@ -40,10 +40,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs'
-          : 'bg-transparent border-b border-transparent'
+          ? 'bg-white/85 dark:bg-slate-950/85 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs'
+          : 'bg-white/40 dark:bg-slate-950/40 backdrop-blur-xs border-b border-slate-200/40 dark:border-slate-800/40'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -51,17 +51,22 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
         <a
           href="#top"
           onClick={(e) => handleLinkClick(e, '#top')}
-          className="group flex items-center gap-2 text-slate-900 dark:text-white font-bold text-lg tracking-tight focus-visible:outline-2 focus-visible:outline-indigo-500 rounded-md"
+          className="group flex items-center gap-2.5 text-slate-900 dark:text-white font-bold text-base sm:text-lg tracking-tight focus-visible:outline-2 focus-visible:outline-indigo-500 rounded-lg py-1 px-1.5 -ml-1.5 transition-colors"
         >
-          <span>{personalInfo.name}</span>
-          <span className="text-xs font-normal text-slate-500 dark:text-slate-400 font-mono">
-            / BCA '26
+          <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-600 text-white text-xs font-mono font-bold shadow-xs">
+            ZS
+          </span>
+          <span className="group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            {personalInfo.name}
+          </span>
+          <span className="hidden sm:inline-block text-[11px] font-normal text-slate-400 dark:text-slate-500 font-mono tracking-normal">
+            · BCA
           </span>
         </a>
 
         {/* Zone 2: Navigation Links */}
         <nav
-          className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300"
+          className="hidden md:flex items-center gap-1 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 bg-slate-100/60 dark:bg-slate-900/60 p-1 rounded-xl border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-xs"
           aria-label="Main Navigation"
         >
           {navLinks.map((link) => {
@@ -71,30 +76,27 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`relative py-1 transition-colors hover:text-slate-900 dark:hover:text-white ${
+                className={`relative px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
                   isActive
-                    ? 'text-indigo-600 dark:text-indigo-400 font-semibold'
-                    : ''
+                    ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold shadow-xs'
+                    : 'hover:text-slate-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-800/50 text-slate-600 dark:text-slate-400'
                 }`}
               >
                 {link.name}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 dark:bg-indigo-400 rounded-full" />
-                )}
               </a>
             );
           })}
         </nav>
 
         {/* Zone 3: Actions (Theme Toggle & External GitHub) */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-2.5">
           {/* GitHub Quick Link */}
           <a
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 rounded-lg shadow-xs hover:border-slate-300 dark:hover:border-slate-700 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
           >
             <Github className="w-3.5 h-3.5" />
             <span>GitHub</span>
@@ -106,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             onClick={toggleTheme}
             type="button"
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white shadow-xs transition-all duration-200 focus-visible:outline-2 focus-visible:outline-indigo-500"
           >
             {theme === 'light' ? (
               <Moon className="w-4 h-4 text-slate-700" />
@@ -121,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             type="button"
             aria-label="Toggle Navigation Menu"
             aria-expanded={mobileMenuOpen}
-            className="md:hidden p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500"
+            className="md:hidden p-2 rounded-lg text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus-visible:outline-2 focus-visible:outline-indigo-500"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

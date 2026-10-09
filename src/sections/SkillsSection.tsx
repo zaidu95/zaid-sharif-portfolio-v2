@@ -21,7 +21,7 @@ export const SkillsSection: React.FC = () => {
       : skillsData.filter((skill) => skill.category === activeCategory);
 
   return (
-    <section id="skills" className="py-20 md:py-28 border-b border-slate-200/80 dark:border-slate-800/80">
+    <section id="skills" className="py-20 md:py-28 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-100/30 dark:bg-slate-900/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -44,16 +44,16 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="mt-10 flex flex-wrap items-center gap-1.5 p-1.5 bg-slate-100 dark:bg-slate-900 rounded-xl border border-slate-200/60 dark:border-slate-800 w-fit">
+        <div className="mt-10 flex flex-wrap items-center gap-1.5 p-1 bg-slate-100/80 dark:bg-slate-900/80 rounded-xl border border-slate-200/80 dark:border-slate-800 w-fit">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               type="button"
-              className={`inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-indigo-500 whitespace-nowrap ${
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-indigo-500 whitespace-nowrap ${
                 activeCategory === cat.id
                   ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs font-semibold'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/40 dark:hover:bg-slate-800/40'
               }`}
             >
               {cat.icon}

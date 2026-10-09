@@ -10,6 +10,8 @@ export const ResumeSection: React.FC = () => {
 Degree: Bachelor of Computer Applications (5th Sem)
 College: Akash Group of Institutions
 University: Bangalore City University (BCU), Bangalore, India
+Email: ${personalInfo.email}
+LinkedIn: ${personalInfo.linkedin}
 GitHub: ${personalInfo.github}
 Key Skills: Python, JavaScript, TypeScript, React, Tailwind CSS, SQL, Supabase/PostgreSQL, Git
 Projects: Home Bite (Cloud Kitchen Platform), Club Attendance Portal (College QR Attendance), AI Study Assistant (Group Project)`;
@@ -41,12 +43,12 @@ Projects: Home Bite (Cloud Kitchen Platform), Club Attendance Portal (College QR
             <button
               onClick={handleCopySummary}
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-850 transition-all duration-200 shadow-xs hover:shadow-sm hover:-translate-y-0.5 active:translate-y-0"
             >
               {copied ? (
                 <>
                   <Check className="w-4 h-4 text-emerald-500" />
-                  <span>Summary Copied</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Summary Copied</span>
                 </>
               ) : (
                 <>
@@ -59,7 +61,7 @@ Projects: Home Bite (Cloud Kitchen Platform), Club Attendance Portal (College QR
             <a
               href="/resume.pdf"
               download="Zaid_Sharif_BCA_Resume.pdf"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
             >
               <Download className="w-4 h-4" />
               <span>Download Resume (PDF)</span>
@@ -68,7 +70,7 @@ Projects: Home Bite (Cloud Kitchen Platform), Club Attendance Portal (College QR
         </div>
 
         {/* Structured Resume Preview Card */}
-        <div className="mt-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800/90 shadow-xs overflow-hidden">
+        <div className="mt-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800/90 shadow-xl shadow-slate-200/50 dark:shadow-slate-950/50 ring-1 ring-slate-900/5 dark:ring-white/5 overflow-hidden">
           {/* Document Header bar */}
           <div className="px-6 sm:px-8 py-5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
@@ -114,8 +116,11 @@ Projects: Home Bite (Cloud Kitchen Platform), Club Attendance Portal (College QR
                 <div>
                   GitHub: <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">github.com/zaidu95</a>
                 </div>
-                <div className="text-slate-400 italic">
-                  Email & LinkedIn: [See Contact Section Placeholders]
+                <div>
+                  Email: <a href={`mailto:${personalInfo.email}`} className="text-indigo-600 dark:text-indigo-400 hover:underline">{personalInfo.email}</a>
+                </div>
+                <div>
+                  LinkedIn: <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">View Profile</a>
                 </div>
               </div>
             </div>
