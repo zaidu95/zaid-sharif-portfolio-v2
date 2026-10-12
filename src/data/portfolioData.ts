@@ -32,7 +32,7 @@ export const personalInfo = {
   linkedinPlaceholder: 'https://linkedin.com/in/zaid-sharif-placeholder',
   isLinkedinPlaceholder: true,
   resumePath: '/resume.pdf',
-  profileImage: '/zaid_sharif_student_photo_1791476414331.jpeg',
+  profileImage: '/WhatsApp Image 2026-10-08 at 7.47.06 PM.jpeg',
   profileImagePath:'/profile.jpg',
 };
 

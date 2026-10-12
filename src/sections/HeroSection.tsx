@@ -92,17 +92,13 @@ export const HeroSection: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-xl shadow-slate-200/50 dark:shadow-slate-950/50 ring-1 ring-slate-900/5 dark:ring-white/5 transition-all duration-300 group">
                 <div className="aspect-4/5 sm:aspect-3/4 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
                   <img
-                    src={personalInfo.profileImage}
-                    alt="Zaid Sharif - BCA Student Profile Photo"
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      // Fallback to public root path if needed
-                      const target = e.currentTarget;
-                      if (!target.src.endsWith('/profile.jpg')) {
-                        target.src = '/profile.jpg';
-                      }
-                    }}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    
+
+  src={personalInfo.profileImage}
+  alt="Zaid Sharif - BCA Student Profile Photo"
+  className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+
+
                   />
                 </div>
 
