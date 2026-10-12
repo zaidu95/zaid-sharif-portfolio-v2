@@ -32,8 +32,8 @@ export const personalInfo = {
   linkedinPlaceholder: 'https://linkedin.com/in/zaid-sharif-placeholder',
   isLinkedinPlaceholder: true,
   resumePath: '/resume.pdf',
-  profileImage:  '/src/assets/images/zaid_sharif_student_photo_1791476414331.jpeg',
-  profileImagePath: '/profile.jpg',
+  profileImage: '/src/assets/images/zaid_sharif_student_photo_1791476414331.jpeg',
+  profileImagePath:'/profile.jpg',
 };
 
 export const skillsData: SkillItem[] = [
